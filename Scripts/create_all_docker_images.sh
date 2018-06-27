@@ -56,6 +56,7 @@ for REPORT in $REPORTS ; do
 
 	cat $WRAPPER | sed "s/^export\ VERSIONRELEASE\=.*\$/${NEW_WRAPPER_LINE}/" > $TMPWRAPPER
 	mv $TMPWRAPPER $WRAPPER
+	chmod 755 $WRAPPER
 	
 	echo "Git add change for $REPORT"
 	git add ${WRAPPER} ${DOCKERFILE}
@@ -63,5 +64,6 @@ for REPORT in $REPORTS ; do
 done
 
 # Git commit
+git add ${TOPDIR}/.version
 MESSAGE="Rebuilt all images using create_all_docker_images.sh with version ${VERSION}."
 git commit -m "${MESSAGE}" 
