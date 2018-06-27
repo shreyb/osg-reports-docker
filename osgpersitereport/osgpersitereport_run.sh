@@ -4,7 +4,7 @@
 # Example:  ./osgpersite_run.sh weekly
 
 
-export VERSIONRELEASE=2.0
+export VERSIONRELEASE=1.2
 export TOPDIR=$HOME/gracc-reporting
 export LOCALLOGDIR=${TOPDIR}/log
 export SCRIPTLOGFILE=${LOCALLOGDIR}/osgpersite_run.log
