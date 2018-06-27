@@ -44,6 +44,13 @@ for REPORT in $REPORTS ; do
 	echo "Building new docker image for $REPORT"
 	cd $REPORTDIR
 	$DOCKER build . -t ${REPORT_IMAGE}
+
+	STATUS=$?
+	if [[ $STATUS != 0 ]] ; then 
+		echo "Docker build failed for $REPORT_IMAGE.  Exiting"
+		exit 1
+	fi
+
 	echo "Pushing new docker image for $REPORT"
 	cd $REPORTDIR
 	$DOCKER push ${REPORT_IMAGE}
