@@ -1,0 +1,11 @@
+version: "2"
+services:
+        osgmissingprojectsreport:
+                image: "shreyb/osg-reports:osgmissingprojectsreport_${VERSIONRELEASE}"
+                volumes:
+                        - ${LOCALLOGDIR}:/tmp/log
+                        - ${CONFIGDIR}:/tmp/gracc-config
+                        - /etc/localtime:/etc/localtime
+                network_mode: "host"
+                command: ["-s", "${starttime}", "-e", "${endtime}", "-c", "/tmp/gracc-config/osg.toml", "-L", "/tmp/log/missingproject.log", "-r" ,"${TYPE}"]
+

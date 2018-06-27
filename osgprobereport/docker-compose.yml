@@ -1,0 +1,10 @@
+version: "2"
+services:
+        osgprobereport:
+                image: "shreyb/osg-reports:osgprobereport_${VERSIONRELEASE}"
+                volumes:
+                        - ${LOCALLOGDIR}:/tmp/log
+                        - ${CONFIGDIR}:/tmp/gracc-config
+                        - /etc/localtime:/etc/localtime
+                network_mode: "host"
+                command: ["-c", "/tmp/gracc-config/osg.toml", "-L", "/tmp/log/osgprobereport.log"]

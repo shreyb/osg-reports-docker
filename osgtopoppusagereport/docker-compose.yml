@@ -1,0 +1,10 @@
+version: "2"
+services:
+        osgtopoppusagereport:
+                image: "shreyb/osg-reports:osgtopoppusagereport_${VERSIONRELEASE}"
+                volumes:
+                        - ${LOCALLOGDIR}:/tmp/log
+                        - ${CONFIGDIR}:/tmp/gracc-config
+                        - /etc/localtime:/etc/localtime
+                network_mode: "host"
+                command: ["-s", "${starttime}", "-e", "${endtime}", "-c", "/tmp/gracc-config/osg.toml", "-L", "/tmp/log/osgtopoppusagereport.log", "-N", "${number}"]
