@@ -4,7 +4,7 @@
 # Example:  ./flocking_run.sh weekly
 
 
-export VERSIONRELEASE=1.1.1
+export VERSIONRELEASE=2.0
 export TOPDIR=$HOME/gracc-reporting
 export LOCALLOGDIR=${TOPDIR}/log
 export SCRIPTLOGFILE=${LOCALLOGDIR}/flocking_run.log

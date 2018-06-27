@@ -1,5 +1,5 @@
 # OSG base image for gracc-reporting
-FROM shreyb/gracc-reporting:osg_1.1.1
+FROM shreyb/osg-reports:2.0
 
 # Executable
 ENTRYPOINT ["osgtopoppusagereport"]
