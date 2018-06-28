@@ -5,7 +5,7 @@ TOPDIR=${START}/..
 OSG_REPORTS_DOCKER_IMG_PREFIX="shreyb/osg-reports"
 
 REPORTS=`cd ${TOPDIR}; ls -d1 osg*report | cut -f1 -d'/'`
-VERSION=`cat ${TOPDIR}/.version`
+VERSION=`cat ${TOPDIR}/version`
 OSG_REPORTS_DOCKER_IMG="${OSG_REPORTS_DOCKER_IMG_PREFIX}:${VERSION}"
 
 DOCKER=`which docker`
@@ -71,6 +71,6 @@ for REPORT in $REPORTS ; do
 done
 
 # Git commit
-git add ${TOPDIR}/.version
+git add ${TOPDIR}/version
 MESSAGE="Rebuilt all images using create_all_docker_images.sh with version ${VERSION}."
 git commit -m "${MESSAGE}" 
