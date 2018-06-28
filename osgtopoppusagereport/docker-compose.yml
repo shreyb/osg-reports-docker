@@ -4,7 +4,7 @@ services:
                 image: "shreyb/osg-reports:osgtopoppusagereport_${VERSIONRELEASE}"
                 volumes:
                         - ${LOCALLOGDIR}:/tmp/log
-                        - ${CONFIGDIR}:/tmp/gracc-config
+                        - ${CONFIGDIR}:/tmp/osg-reports-config
                         - /etc/localtime:/etc/localtime
                 network_mode: "host"
-                command: ["-s", "${starttime}", "-e", "${endtime}", "-c", "/tmp/gracc-config/osg.toml", "-L", "/tmp/log/osgtopoppusagereport.log", "-N", "${number}"]
+                command: ["-s", "${starttime}", "-e", "${endtime}", "-c", "/tmp/osg-reports-config/osg.toml", "-L", "/tmp/log/osgtopoppusagereport.log", "-N", "${number}", "-T", "/tmp/html_templates/template_topoppusage.html"]

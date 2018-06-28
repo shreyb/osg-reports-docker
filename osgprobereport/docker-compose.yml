@@ -4,7 +4,7 @@ services:
                 image: "shreyb/osg-reports:osgprobereport_${VERSIONRELEASE}"
                 volumes:
                         - ${LOCALLOGDIR}:/tmp/log
-                        - ${CONFIGDIR}:/tmp/gracc-config
+                        - ${CONFIGDIR}:/tmp/osg-reports-config
                         - /etc/localtime:/etc/localtime
                 network_mode: "host"
-                command: ["-c", "/tmp/gracc-config/osg.toml", "-L", "/tmp/log/osgprobereport.log"]
+                command: ["-c", "/tmp/osg-reports-config/osg.toml", "-L", "/tmp/log/osgprobereport.log"]
