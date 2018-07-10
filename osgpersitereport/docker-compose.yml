@@ -7,5 +7,5 @@ services:
                         - ${CONFIGDIR}:/tmp/osg-reports-config
                         - /etc/localtime:/etc/localtime
                 network_mode: "host"
-                command: ["-s", "${starttime}", "-c", "/tmp/osg-reports-config/osg.toml", "-L", "/tmp/log/osgpersitereport.log", "-T", "/tmp/html_templates/template_persite.html"]
+                command: ["-s", "${starttime}", "-c", "/tmp/osg-reports-config/osg.toml", "-T", "/tmp/html_templates/template_persite.html"]
 

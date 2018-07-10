@@ -4,7 +4,7 @@
 
 
 export VERSIONRELEASE=2.0
-export TOPDIR=$HOME/gracc-reporting
+export TOPDIR=/opt/gracc-reporting
 export LOCALLOGDIR=${TOPDIR}/log
 export SCRIPTLOGFILE=${LOCALLOGDIR}/probereport_run.log
 export REPORTLOGFILE=${LOCALLOGDIR}/osgprobereport.log
