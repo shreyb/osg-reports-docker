@@ -3,8 +3,8 @@ services:
         osgprobereport:
                 image: "shreyb/osg-reports:osgprobereport_${VERSIONRELEASE}"
                 volumes:
-                        - ${LOCALLOGDIR}:/tmp/log
+                        - state:/tmp/log
                         - ${CONFIGDIR}:/tmp/osg-reports-config
                         - /etc/localtime:/etc/localtime
                 network_mode: "host"
-                command: ["-c", "/tmp/osg-reports-config/osg.toml"]
+                command: ["-c", "/tmp/osg-reports-config/osg.toml", "-S", "/tmp/log/probereporthistory.log"]
